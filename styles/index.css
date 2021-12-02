@@ -1,0 +1,78 @@
+/*
+Import styles from form.css
+*/
+@import url('./form.css');
+@import url('./button.css');
+@import url('./input.css');
+/*
+Give body fullscreen size with no margin and padding
+Add background image with repeat set to 0 and position in center and fixed while scrolling
+Set size of background to extend image by width and height cover the whole body
+*/
+body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background: url('../images/background.webp') no-repeat center fixed;
+    background-size: cover;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/*
+The main container of forms in flex
+To center the contents horizentaly and vertically
+*/
+.main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/*
+Remove default margin of h2 since I used padding for them
+*/
+h2 {
+    margin: .5rem 0;
+}
+
+/*
+Give notification specific height and width to prevent from crazy resizing and transition
+Center text and give it some nice curved corners
+Set opacity to 0 to make it hidden
+Set transition on all properties and use it to show and hide the div with effects
+*/
+.notifications {
+    color: white;
+    text-align: center;
+    height: 1rem;
+    border: 1px solid transparent;
+    border-radius: 5rem;
+    padding: .5rem;
+    opacity: 0;
+    transition: all ease .5s;
+    width: 350px;
+}
+
+/*
+Class to show notification when added
+*/
+.show {
+    opacity: 1;
+}
+
+/*
+Classes with different backgrounds for different situations
+*/
+.error {
+    background-color: tomato !important;
+}
+.success {
+    background-color: #0fcb94 !important;
+}
+.loading {
+    background-color: #6c757d !important;
+}
